@@ -1,2 +1,2 @@
-# react-effeact
+# react-effect
 特效
