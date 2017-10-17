@@ -4,6 +4,7 @@ import {Router, Route, Switch, Redirect} from 'react-router'
 import {createMemoryHistory} from 'history'
 import WaterFall from '@/components/waterfall/index'
 import Home from '@/components/home/index'
+import Motion from '@/components/Motion'
 import '@/styles/reset.css'
 import '@/styles/index.less'
 import {Provider} from 'react-redux'
@@ -30,7 +31,8 @@ class App extends PureComponent {
             <Provider store={store}>
                 <Router history={history}>
                     <Switch>
-                        <Route path="/" component={Home}/>
+                        <Route path="/" component={Motion}/>
+                        <Route path="/home" component={Home}/>
                         <Route path="/waterfall" component={WaterFall}/>
                     </Switch>
                 </Router>

@@ -1,7 +1,7 @@
 let express = require('express'),
 	proxyMiddleware = require('http-proxy-middleware'),
 	webpackDevMiddleware = require('webpack-dev-middleware'),
-	webpackHotMiddleware = require('webpack-hot-middleware'),
+	webpackDevServer = require('webpack-dev-server'),
 	webpack = require('webpack'),
 	webpackConfig = require('./webpack.config');
 var open = require('open');
@@ -11,7 +11,7 @@ let app = express(),
  * 设置代理
  */
 let proxyOptions = {
-	target: 'http://localhost:8080', // target host
+	target: 'http://localhost:3000', // target host
 	changeOrigin: true,               // needed for virtual hosted sites
 	ws: true,                         // proxy websockets
 	pathRewrite: {
@@ -33,12 +33,12 @@ app.use(webpackDevMiddleware(compiler, {        //fixme
 	quiet: false,
 	// display nothing to the console
 }));
-app.use(webpackHotMiddleware(compiler, {
-	overlay: true,
-	report: true
-}));
+// app.use(webpackHotMiddleware(compiler, {
+// 	overlay: true,
+// 	report: true
+// }));
 
-app.listen(8080, function () {
-     open('http://localhost:8080');
+app.listen(3000, function () {
+     open('http://localhost:3000');
 });
 

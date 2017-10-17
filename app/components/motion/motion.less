@@ -1,0 +1,89 @@
+@-webkit-keyframes fadeInLeft {
+  from {
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+  }
+  to {
+	-webkit-transform: none;
+	transform: none;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+  }
+  to {
+	-webkit-transform: none;
+	transform: none;
+  }
+}
+
+.toggle-bar {
+  height: 48px;
+  position: relative;
+  z-index: 10;
+  display: block;
+  padding: 0 24px;
+  width: calc(100% - 50px);
+  background: grey;
+  border-bottom: 1px solid gainsboro;
+  .m-line{
+	display: block;
+	margin: 10px;
+  }
+  .nav-context{
+	position: relative;
+	width: 300px;
+  }
+  ul {
+	height: 48px;
+	li {
+	  height: 48px;
+	  display: inline-block;
+	  margin: 0 12px 0 0;
+	  font-size: 16px;
+	  span {
+		display: inline-block;
+	  }
+	  > span {
+		height: 48px;
+		line-height: 48px;
+		color: darkgray;
+		cursor: pointer;
+		&:hover {
+		  color: black;
+		}
+	  }
+	  .leftActive, .rightActive {
+		position: relative;
+		height: 49px;
+		font-weight: bold;
+		//border-bottom: 2px solid @font-color-focus;
+		box-sizing: border-box;
+		.a {
+		  position: absolute;
+		  width: 100%;
+		  bottom: 0px;
+		  display: -webkit-box;
+		  border-bottom: 2px solid darkblue;
+		  color: black;
+		}
+	  }
+	  .leftActive {
+		.a {
+		  animation: fadeInLeft .5s ease forwards;
+		}
+	  }
+	  .rightActive {
+		.a {
+			animation: fadeInRight .5s ease forwards;
+		}
+	  }
+	}
+  }
+}
+
+
+
