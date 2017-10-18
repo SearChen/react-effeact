@@ -18,6 +18,8 @@ class Effect extends PureComponent {
 		return (
 			<div>
 				<div styleName="page"></div>
+				<div styleName="image-layer" id="image-layer">
+				</div>
 				<div styleName="demo">
 					<div>
 						<i></i>
