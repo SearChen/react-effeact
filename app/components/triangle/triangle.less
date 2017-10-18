@@ -1,0 +1,66 @@
+@-webkit-keyframes fadeInUp{
+  from {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+  }
+  to {
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
+  }
+}
+body {
+  background: gray;
+}
+.page{
+  margin: 100px auto;
+  width: 100px;
+  height: 100px;
+  background: -webkit-linear-gradient(top right,transparent 15% ,#ccc 0);
+  position: relative;
+  cursor: pointer;
+  border-radius: 5px;
+  &::after {
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: -webkit-linear-gradient(top right,transparent 50% ,#fff 0);
+	top: 0;
+	right: 0;
+	border-bottom-left-radius:5px;
+
+  }
+  &:hover{
+	background: -webkit-linear-gradient(top right,transparent 0% ,#ccc 0);
+  }
+  &:hover:after{
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	background: none;
+	transition-duration: 9s;
+	-webkit-animation: fadeInUp .9s ease forwards;
+
+  }
+}
+div.demo{
+  float:left;
+  border:1px solid #ccc;
+}
+div.demo i{
+  cursor:pointer;
+  height:50px;
+  transition:opacity 2s;
+  width:50px;
+  background:#000;
+  float:left;
+  margin:5px;
+  opacity:0;
+}
+div.demo i:hover{
+  opacity:1;
+  transition-duration:0s;
+}
